@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+</head>
+<body>
+    <div class="container">
+
+            <div class="col1 ">
+               <div class="heading">
+                <span class="circle"></span>    
+               <span><p>BASE<br> APPAREL</p></span>
+               </div>
+               <img class="mb-img" src="/images/hero-mobile.jpg"/>
+                <h1> <span>WE'RE<br></span> COMING <br> SOON</h1>
+                <p style="line-height: 15px;">Hello fellow shoppers! We're currently building our new <br>fashion store. 
+                    Add your email below to stay up-to-date with <br>announcements and our launch deals.</p>
+                     <div class="inputgrp">
+                      <div style="position: relative;">
+                        
+                      <input type="email" placeholder="Email Address" id="email">
+                        <img class="error-icon" src="images/icon-error.svg"/>
+                      </div>
+                      <button type="button" title="Submit" class="arrow"><img src="images/icon-arrow.svg" style="pointer-events: none;"/></button>
+                    </div>
+                    <div >Please Provide a Valid Email</div>
+              </div>
+            <div class="col2">
+                  <img src="images/hero-desktop.jpg"/>
+            </div>
+        </div>
+  
+   
+</body>
+<script>
+    
+
+const re = /^\S+@\S+\.\S+$/;
+  let ibutton = document.getElementsByClassName("arrow")[0];
+  ibutton.addEventListener('click', function(event){
+
+    let parent_div=event.target.parentElement;
+    let error_div=parent_div.nextElementSibling; //.getElementsByClassName("div-none")[0]
+
+    console.log(error_div);
+
+    let email=document.getElementById("email").value;
+    if(email.toLowerCase().match(re))
+    {
+      parent_div.classList.remove("error");
+    }
+    else
+    {
+      parent_div.classList.add("error");
+    }
+  });
+
+
+
+</script>
+</html>
